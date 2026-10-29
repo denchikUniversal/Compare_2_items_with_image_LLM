@@ -1,0 +1,15 @@
+{
+  "item_a": {
+    "id": "poster-1001",
+    "title": "Poster: two cats sleeping on a pink sofa",
+    "image_url": "http://images.cocodataset.org/val2017/000000039769.jpg",
+    "attributes": {"size": "50x70 cm", "paper": "matte"}
+  },
+  "item_b": {
+    "id": "poster-2002",
+    "title": "Poster: brown bear in the grass",
+    "image_url": "http://images.cocodataset.org/val2017/000000000285.jpg",
+    "attributes": {"size": "50x70 cm", "paper": "matte"},
+    "price": 19.99
+  }
+}

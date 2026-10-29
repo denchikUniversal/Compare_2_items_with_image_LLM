@@ -1,0 +1,51 @@
+[project]
+name = "item-compare"
+version = "0.1.0"
+description = "Compare two products (image + text) and get similarity in percent; REST API on FastAPI + PyTorch/CLIP"
+authors = [
+    { name = "Denys Tkachenko", email = "denys.tkachenko@smartsellweb.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.162.0",
+    "httpx>=0.28.1",
+    "numpy>=2.5.4",
+    "pillow>=13.0.0",
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.16.2",
+    "torch>=2.15.0",
+    "torchvision>=0.29.2",
+    "transformers>=5.22.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+item-compare-api = "item_compare.api:run"
+
+[build-system]
+requires = ["uv_build>=0.12.4,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+rag = [
+    "anthropic>=2.3.0",
+    "qdrant-client>=1.20.0",
+    "sentence-transformers>=6.2.0",
+]
+train = [
+    "scikit-learn>=1.9.1",
+]
+
+[tool.uv]
+# `uv sync` / `uv run` ставят всё сразу. Для продакшен-образа только с API:
+# uv sync --no-default-groups
+default-groups = ["dev", "train", "rag"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Корень репозитория в sys.path, чтобы тесты видели пакет RAG/.
+pythonpath = ["."]
+markers = ["slow: loads the real CLIP model (run with RUN_SLOW=1)"]

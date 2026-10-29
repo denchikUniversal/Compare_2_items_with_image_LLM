@@ -1,0 +1,29 @@
+{
+  "query": {
+    "id": "poster-1001",
+    "title": "Poster: two cats sleeping on a pink sofa",
+    "image_url": "http://images.cocodataset.org/val2017/000000039769.jpg"
+  },
+  "candidates": [
+    {
+      "id": "poster-2002",
+      "title": "Poster: brown bear in the grass",
+      "image_url": "http://images.cocodataset.org/val2017/000000000285.jpg"
+    },
+    {
+      "id": "poster-1001-dup",
+      "title": "Cats on pink couch wall poster",
+      "image_url": "http://images.cocodataset.org/val2017/000000039769.jpg"
+    },
+    {
+      "id": "poster-3003",
+      "title": "Poster: teddy bears",
+      "image_url": "http://images.cocodataset.org/val2017/000000000776.jpg"
+    },
+    {
+      "id": "text-only",
+      "title": "Two cats sleeping on a pink sofa"
+    }
+  ],
+  "top_k": 3
+}

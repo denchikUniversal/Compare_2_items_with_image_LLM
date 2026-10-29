@@ -1,0 +1,18 @@
+{"item_a": {"title": "Apple iPhone 15 Pro 128GB Natural Titanium"}, "item_b": {"title": "iPhone 15 Pro 128 GB natural titanium by Apple"}, "label": 1}
+{"item_a": {"title": "Nike Air Max 90 Men's Running Shoes", "attributes": {"color": "white"}}, "item_b": {"title": "Air Max 90 white sneakers by Nike, men"}, "label": 1}
+{"item_a": {"title": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones Black"}, "item_b": {"title": "Sony WH1000XM5 black over-ear headphones, noise cancelling"}, "label": 1}
+{"item_a": {"title": "Samsung Galaxy S24 Ultra 256GB Titanium Gray"}, "item_b": {"title": "Galaxy S24 Ultra, 256 GB, titanium gray, Samsung"}, "label": 1}
+{"item_a": {"title": "LEGO Star Wars Millennium Falcon 75257"}, "item_b": {"title": "Millennium Falcon LEGO set 75257 Star Wars"}, "label": 1}
+{"item_a": {"title": "Dyson V15 Detect Cordless Vacuum Cleaner"}, "item_b": {"title": "Dyson V15 Detect cordless stick vacuum"}, "label": 1}
+{"item_a": {"title": "Apple iPhone 15 Pro 128GB Natural Titanium"}, "item_b": {"title": "Apple iPhone 15 Pro 256GB Blue Titanium"}, "label": 0}
+{"item_a": {"title": "Nike Air Max 90 Men's Running Shoes", "attributes": {"color": "white"}}, "item_b": {"title": "Nike Air Force 1 Low White"}, "label": 0}
+{"item_a": {"title": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones Black"}, "item_b": {"title": "Bose QuietComfort Ultra Headphones Black"}, "label": 0}
+{"item_a": {"title": "Samsung Galaxy S24 Ultra 256GB Titanium Gray"}, "item_b": {"title": "Google Pixel 8 Pro 128GB Obsidian"}, "label": 0}
+{"item_a": {"title": "LEGO Star Wars Millennium Falcon 75257"}, "item_b": {"title": "LEGO Technic Porsche 911 GT3 RS 42056"}, "label": 0}
+{"item_a": {"title": "Dyson V15 Detect Cordless Vacuum Cleaner"}, "item_b": {"title": "Shark Navigator Lift-Away Upright Vacuum"}, "label": 0}
+{"item_a": {"title": "Poster: two cats sleeping on a pink sofa", "image_url": "http://images.cocodataset.org/val2017/000000039769.jpg"}, "item_b": {"title": "Cats on pink couch wall poster", "image_url": "http://images.cocodataset.org/val2017/000000039769.jpg"}, "label": 1}
+{"item_a": {"title": "Poster: teddy bears", "image_url": "http://images.cocodataset.org/val2017/000000000776.jpg"}, "item_b": {"title": "Teddy bear family wall poster", "image_url": "http://images.cocodataset.org/val2017/000000000776.jpg"}, "label": 1}
+{"item_a": {"image_url": "http://images.cocodataset.org/val2017/000000000285.jpg"}, "item_b": {"title": "Poster: brown bear in the grass"}, "label": 1}
+{"item_a": {"title": "Poster: two cats sleeping on a pink sofa", "image_url": "http://images.cocodataset.org/val2017/000000039769.jpg"}, "item_b": {"title": "Poster: brown bear in the grass", "image_url": "http://images.cocodataset.org/val2017/000000000285.jpg"}, "label": 0}
+{"item_a": {"title": "Poster: cozy living room", "image_url": "http://images.cocodataset.org/val2017/000000000139.jpg"}, "item_b": {"title": "Poster: bedroom interior", "image_url": "http://images.cocodataset.org/val2017/000000000632.jpg"}, "label": 0}
+{"item_a": {"image_url": "http://images.cocodataset.org/val2017/000000000776.jpg"}, "item_b": {"title": "Poster: two cats sleeping on a pink sofa"}, "label": 0}

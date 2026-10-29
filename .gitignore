@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Локальные настройки и секреты
+.env
+.claude/
+
+# Данные, кэш картинок и результаты обучения (только в корне — RAG/data/ коммитится)
+/data/
+/checkpoints/
+
+# Файлы локальной векторной базы Qdrant (создаются командой ingest)
+RAG/qdrant_data/
+
+# macOS
+.DS_Store

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "sku-1001",
+    "title": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+    "brand": "Sony",
+    "category": "audio",
+    "price": 349.99,
+    "in_stock": true,
+    "description": "Over-ear Bluetooth headphones with industry-leading active noise cancelling, 30-hour battery life and multipoint connection. Color: black."
+  },
+  {
+    "id": "sku-1002",
+    "title": "Bose QuietComfort Ultra Headphones",
+    "brand": "Bose",
+    "category": "audio",
+    "price": 429.0,
+    "in_stock": false,
+    "description": "Premium wireless noise cancelling headphones with immersive spatial audio and 24-hour battery life. Color: white smoke."
+  },
+  {
+    "id": "sku-1003",
+    "title": "Apple AirPods Pro (2nd generation)",
+    "brand": "Apple",
+    "category": "audio",
+    "price": 249.0,
+    "in_stock": true,
+    "description": "In-ear wireless earbuds with active noise cancellation, transparency mode and a USB-C MagSafe charging case."
+  },
+  {
+    "id": "sku-2001",
+    "title": "Apple iPhone 15 Pro 128GB Natural Titanium",
+    "brand": "Apple",
+    "category": "phones",
+    "price": 999.0,
+    "in_stock": true,
+    "description": "6.1-inch smartphone with a titanium frame, A17 Pro chip, 48 MP main camera and USB-C."
+  },
+  {
+    "id": "sku-2002",
+    "title": "Samsung Galaxy S24 Ultra 256GB Titanium Gray",
+    "brand": "Samsung",
+    "category": "phones",
+    "price": 1299.99,
+    "in_stock": true,
+    "description": "6.8-inch Android smartphone with a built-in S Pen, 200 MP camera and 5000 mAh battery."
+  },
+  {
+    "id": "sku-3001",
+    "title": "Nike Air Max 90 Men's Shoes White",
+    "brand": "Nike",
+    "category": "shoes",
+    "price": 129.99,
+    "in_stock": true,
+    "description": "Classic running-inspired sneakers with a visible Max Air unit in the heel and a leather and mesh upper."
+  },
+  {
+    "id": "sku-3002",
+    "title": "Adidas Ultraboost Light Running Shoes Black",
+    "brand": "Adidas",
+    "category": "shoes",
+    "price": 189.99,
+    "in_stock": true,
+    "description": "Lightweight road running shoes with a responsive Boost midsole and a breathable knit upper."
+  },
+  {
+    "id": "sku-4001",
+    "title": "Dyson V15 Detect Cordless Vacuum Cleaner",
+    "brand": "Dyson",
+    "category": "home",
+    "price": 749.99,
+    "in_stock": true,
+    "description": "Cordless stick vacuum with a laser that reveals microscopic dust and up to 60 minutes of run time."
+  },
+  {
+    "id": "sku-5001",
+    "title": "LEGO Star Wars Millennium Falcon 75257",
+    "brand": "LEGO",
+    "category": "toys",
+    "price": 169.99,
+    "in_stock": false,
+    "description": "Building set with 1351 pieces and 7 minifigures, recommended for ages 9 and up."
+  }
+]

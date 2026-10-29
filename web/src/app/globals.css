@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
+  background-image:
+    radial-gradient(40rem 22rem at 15% -6rem, --alpha(var(--color-sky-400) / 12%), transparent),
+    radial-gradient(40rem 22rem at 85% -6rem, --alpha(var(--color-violet-400) / 12%), transparent);
+  background-repeat: no-repeat;
+}
+
+/* Шахматка под превью: видно прозрачные области PNG. */
+.checker {
+  --checker: var(--color-zinc-100);
+  background-color: var(--color-white);
+  background-image: conic-gradient(var(--checker) 25%, transparent 0 50%, var(--checker) 0 75%, transparent 0);
+  background-size: 16px 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .checker {
+    --checker: var(--color-zinc-900);
+    background-color: var(--color-zinc-950);
+  }
+}

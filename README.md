@@ -7,12 +7,20 @@ REST API, который сравнивает два товара (картин�
 - `POST /v1/compare` — похожесть двух товаров.
 - `POST /v1/match` — сравнить товар со списком кандидатов и отсортировать их (поиск дублей).
 - `item_compare.training` — калибровка процентов и дообучение под свои товары.
+- [`web/`](web/README.md) — веб-интерфейс на Next.js: перетащить две картинки или два JSON с товарами
+  и получить процент с разбором.
 - [`RAG/`](RAG/README.md) — отдельная учебная имитация RAG-флоу с векторной базой Qdrant.
-- Web UI: см. [`web/README.md`](web/README.md).
 
-## Быстрый старт
+## Запуск
 
-Нужен [uv](https://docs.astral.sh/uv/). Python 3.12 он скачает сам.
+Что нужно установить:
+
+- [uv](https://docs.astral.sh/uv/) — для Python-части. Python 3.12 он скачает сам.
+- [Node.js](https://nodejs.org/) 20.9+ с npm — только для веб-интерфейса.
+
+### Python API
+
+Из корня репозитория:
 
 ```bash
 uv sync                     # зависимости (torch, transformers, fastapi, ...)
@@ -20,12 +28,62 @@ uv run item-compare-api     # http://127.0.0.1:8000, Swagger UI: http://127.0.0.
 ```
 
 Первый запуск скачивает CLIP (~600 МБ) в кэш Hugging Face. На Apple Silicon модель работает
-на GPU через MPS, на NVIDIA — через CUDA, иначе на CPU.
+на GPU через MPS, на NVIDIA — через CUDA, иначе на CPU. Сервер готов, когда в логе появится
+`Application startup complete`. Другой порт: `ITEM_COMPARE_PORT=9000 uv run item-compare-api`.
+
+Проверка из второго терминала:
 
 ```bash
+curl -s localhost:8000/health
 curl -s -X POST localhost:8000/v1/compare -H 'content-type: application/json' -d @examples/compare_request.json
 curl -s -X POST localhost:8000/v1/match   -H 'content-type: application/json' -d @examples/match_request.json
 ```
+
+### Веб-интерфейс
+
+Сайт работает поверх Python API, поэтому сначала выполните `uv sync` из раздела выше. Затем:
+
+```bash
+cd web
+npm install
+npm run dev                 # Python API на :8000 + сайт на http://localhost:3000
+```
+
+`npm run dev` сначала пересобирает TypeScript-типы из схемы API (`npm run api:types`), а затем
+запускает оба сервера в одном терминале. Логи помечены `api` и `web`, Ctrl+C останавливает оба.
+
+Если API уже запущен отдельно (`uv run item-compare-api`), запускайте только сайт:
+
+```bash
+cd web
+npm run dev:web
+```
+
+Браузер ходит не в Python напрямую, а в Next.js: запросы `/api/*` проксируются в Python API.
+Адрес API берётся из `ITEM_COMPARE_API_URL`, а без неё — из `ITEM_COMPARE_HOST` и
+`ITEM_COMPARE_PORT` (по умолчанию `http://127.0.0.1:8000`). Задать его можно в `web/.env.local`,
+образец — [`web/.env.example`](web/.env.example).
+
+После изменения моделей в [schemas.py](src/item_compare/schemas.py) обновите типы для сайта:
+`cd web && npm run api:types` (при `npm run dev` это происходит само).
+
+Продакшен-сборка сайта (Python API запускается отдельно):
+
+```bash
+cd web
+npm run build
+npm run start               # http://localhost:3000
+```
+
+Все npm-скрипты и то, как типы сайта синхронизируются с Python, описаны в [web/README.md](web/README.md).
+
+### RAG
+
+```bash
+uv run python -m RAG.main demo
+```
+
+Остальные команды описаны в [RAG/README.md](RAG/README.md).
 
 ## API
 
@@ -162,9 +220,14 @@ src/item_compare/
   schemas.py        Pydantic-модели запросов и ответов
   config.py         настройки
   training/         calibrate.py, train_head.py, data.py, losses.py
+  openapi.py        выгрузка схемы API в JSON (из неё web/ генерирует TypeScript-типы)
 examples/           примеры запросов и размеченных пар
 RAG/                учебный RAG-пайплайн с Qdrant (свой README)
 tests/
+web/
+  src/app/          страница и прокси /api/* -> Python API
+  src/components/   компоненты интерфейса
+  src/lib/api/      клиент API и типы, сгенерированные из openapi.json
 ```
 
 ## Безопасность
